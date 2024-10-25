@@ -12,9 +12,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/section_a', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('section_a');
+
+
+
     Route::get('/datatable', function () {
         return view('datatable');
     })->name('datatable');});
