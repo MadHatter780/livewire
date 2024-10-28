@@ -4,5 +4,4 @@
             Sub Menu
         </div>
     </div>
-    {{-- Success is as dangerous as failure. --}}
 </div>

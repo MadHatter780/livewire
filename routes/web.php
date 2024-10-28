@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Dashboard;
 use App\Livewire\Datatable;
 use Illuminate\Support\Facades\Route;
 
@@ -12,12 +13,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/section_a', function () {
-        return view('dashboard');
-    })->name('section_a');
 
-
-
+    Route::get('/dashboard/{name}', Dashboard::class)->name('section');
     Route::get('/datatable', function () {
         return view('datatable');
     })->name('datatable');});

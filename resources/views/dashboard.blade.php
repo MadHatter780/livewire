@@ -1,5 +1,4 @@
 <x-app-layout>
-    <x-sidebar />
 
-    <livewire:section-a />
+    <livewire:dashboard />
 </x-app-layout>

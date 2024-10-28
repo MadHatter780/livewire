@@ -19,11 +19,7 @@
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <style>
-        .tnr {
-            font-family: 'Times New Roman', Times, serif;
-        }
-    </style>
+
     @livewireStyles
 </head>
 
@@ -44,7 +40,7 @@
 
         <!-- Page Content -->
         <main class=" h-full w-full overflow-y-auto flex">
-            @if (request()->routeIs('user/*'))
+            @if (request()->routeIs('section'))
                 @livewire('sidebar')
             @endif
             {{ $slot }}

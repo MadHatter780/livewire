@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('section_a') }}">
+                    <a href="{{ route('section', ['name' => 'x_home']) }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-2 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link wire:navigate href="{{ route('section_a') }}" :active="request()->routeIs('section_a')">
+                    <x-nav-link wire:navigate href="{{ route('section', ['name' => 'x_home']) }}" :active="request()->routeIs('section')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link wire:navigate href="{{ route('datatable') }}" :active="request()->routeIs('datatable')">
@@ -153,7 +153,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('section_a') }}" :active="request()->routeIs('section_a')">
+            <x-responsive-nav-link href="{{ route('section', ['name' => 'x_home']) }}" :active="request()->routeIs('section')">
                 {{ __('Section a') }}
             </x-responsive-nav-link>
         </div>
