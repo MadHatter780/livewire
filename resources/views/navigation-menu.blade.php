@@ -18,6 +18,9 @@
                     <x-nav-link wire:navigate href="{{ route('datatable') }}" :active="request()->routeIs('datatable')">
                         {{ __('Database') }}
                     </x-nav-link>
+                    <x-nav-link wire:navigate href="{{ route('energy') }}" :active="request()->routeIs('energy')">
+                        {{ __('Energy') }}
+                    </x-nav-link>
                 </div>
             </div>
 

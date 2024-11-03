@@ -116,7 +116,6 @@
                     <th scope="col" class="px-6 py-3 border border-gray-300">Power Fac ( kWh )</th>
                     <th scope="col" class="px-6 py-3 border border-gray-300">Sensor ( &deg;C )</th>
                     <th scope="col" class="px-6 py-3 border border-gray-300 rounded-e-lg">Count Session</th>
-
                     <th scope="col" class="px-6 py-3 border border-gray-300">Created At</th>
 
                 </tr>
