@@ -19,6 +19,7 @@ class HistoryEnergy extends Component
         $query = Energy::query();
 
         if (!empty($this->dataBySection) && !empty($this->timeFilter)) {
+
             if (!empty($this->dataBySection) && !empty($this->timeFilter)) {
                 if ($this->timeFilter == "week") {
                     $query->where('label', $this->dataBySection)
@@ -27,9 +28,16 @@ class HistoryEnergy extends Component
                               Carbon::now()->endOfWeek()
                           ]);
                     $eW = $query->orderBy("created_at","desc")->first();
-                    $this->energy = $eW->accenergy;
-                    $this->cost = $eW->accenergy * 5;
-                    $this->carbon = $eW->accenergy * 0.495;
+                    if($eW){
+                        $this->energy = $eW->accenergy;
+                        $this->cost = $eW->accenergy * 5;
+                        $this->carbon = $eW->accenergy * 0.495;
+                    }else{
+                        $this->energy = 0;
+                        $this->cost = 0 ;
+                        $this->carbon = 0 ;
+                    }
+
 
                 }
                 else if ($this->timeFilter == "month") {
@@ -39,9 +47,9 @@ class HistoryEnergy extends Component
                               Carbon::now()->endOfMonth()
                           ]);
                     $eW = $query->orderBy("created_at","desc")->first();
-                    $this->energy = $eW->accenergy;
-                    $this->cost = $eW->accenergy * 5;
-                    $this->carbon = $eW->accenergy * 0.495;
+                    $this->energy = $eW->accenergy ;
+                    $this->cost = $eW->accenergy ;
+                    $this->carbon = $eW->accenergy ;
 
                 }
                 else if ($this->timeFilter == "year") {
